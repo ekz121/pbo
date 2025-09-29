@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Praktikum</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(30, 30, 50, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            background: linear-gradient(45deg, #64b5f6, #42a5f5, #2196f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .praktikum-item {
+            background: linear-gradient(135deg, #2a2a40 0%, #1e1e35 100%);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .praktikum-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: left 0.5s;
+        }
+
+        .praktikum-item:hover::before {
+            left: 100%;
+        }
+
+        .praktikum-item:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #3a3a50 0%, #2e2e45 100%);
+            border-color: rgba(100, 181, 246, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(100, 181, 246, 0.1);
+        }
+
+        .praktikum-item:active {
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .semester {
+            font-size: 14px;
+            color: #b0b0b0;
+            font-weight: 400;
+        }
+
+        .arrow {
+            font-size: 20px;
+            color: #64b5f6;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .praktikum-item:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        /* Icon colors */
+        .icon-1 { background: linear-gradient(135deg, #ff6b6b, #ee5a52); }
+        .icon-2 { background: linear-gradient(135deg, #4ecdc4, #44a08d); }
+        .icon-3 { background: linear-gradient(135deg, #45b7d1, #96c93d); }
+        .icon-4 { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .icon-5 { background: linear-gradient(135deg, #feca57, #ff9ff3); }
+        .icon-6 { background: linear-gradient(135deg, #48dbfb, #0abde3); }
+        .icon-7 { background: linear-gradient(135deg, #ff9ff3, #feca57); }
+        .icon-8 { background: linear-gradient(135deg, #54a0ff, #5f27cd); }
+        .icon-9 { background: linear-gradient(135deg, #00d2d3, #54a0ff); }
+        .icon-10 { background: linear-gradient(135deg, #ff6348, #ff9ff3); }
+        .icon-11 { background: linear-gradient(135deg, #2ed573, #7bed9f); }
+        .icon-12 { background: linear-gradient(135deg, #70a1ff, #5352ed); }
+        .icon-13 { background: linear-gradient(135deg, #00d2d3, #54a0ff); }
+        .icon-14 { background: linear-gradient(135deg, #ff4757, #ff3838); }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .praktikum-item {
+                padding: 15px;
+            }
+            
+            .icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                margin-right: 15px;
+            }
+            
+            .title {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Praktikum Pemrograman Berorientasi Obyek Dasar</h1>
+        
+        <a href="https://ekz121.github.io/OBJECT-ORIENTED-PROGRAMMING-dan-MENGENAL-IDE-NETBEANS/" class="praktikum-item">
+            <div class="icon icon-1">🌐</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 1: OBJECT ORIENTED PROGRAMMING dan MENGENAL IDE NETBEANS
+</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum2.html" class="praktikum-item">
+            <div class="icon icon-2">👤</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 2: LABEL, TEXTFILELD dan BUTTON
+</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum3.html" class="praktikum-item">
+            <div class="icon icon-3">📱</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 3: PASSWORD dan FORMATTED FILE
+</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum4.html" class="praktikum-item">
+            <div class="icon icon-4">🖼️</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 4: PASSWORD dan FORMATTED FILE
+    </div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum5.html" class="praktikum-item">
+            <div class="icon icon-5">📝</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 5: CHECK BOX dan TEXT AREA
+</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum6.html" class="praktikum-item">
+            <div class="icon icon-6">📰</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 6: LIST dan SCROLLPANE
+</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum7.html" class="praktikum-item">
+            <div class="icon icon-7">🔗</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 7: UPDATE DATA LISTBOX, TEXTAREA dan COMBOBOX
+</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum8.html" class="praktikum-item">
+            <div class="icon icon-8">🎨</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 8: TABBED PANE dan PANEL
+</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum9.html" class="praktikum-item">
+            <div class="icon icon-9">🔌</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 9: SCROLL BAR dan SPINNER
+</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum10.html" class="praktikum-item">
+            <div class="icon icon-10">💻</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 10:MENU BAR, MENU, MENU ITEM dan SEPERATOR
+</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum11.html" class="praktikum-item">
+            <div class="icon icon-11">📋</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 11: POPUPMENU dan TOOL BAR
+</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum12.html" class="praktikum-item">
+            <div class="icon icon-12">🎭</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 12::SLIDER dan FILE CHOOSER
+</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum13.html" class="praktikum-item">
+            <div class="icon icon-13">💻</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 13: C.R.U.D, dan PENCARIAN DATA DENGAN DATABASE
+</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <a href="praktikum14.html" class="praktikum-item">
+            <div class="icon icon-14">🚀</div>
+            <div class="content">
+                <div class="title">PRAKTIKUM 14: Proyek Akhir</div>
+                <div class="semester">Semester 2</div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+    </div>
+</body>
+</html>
